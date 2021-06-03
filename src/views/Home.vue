@@ -1,4 +1,5 @@
 <template>
+<div class="test-rem"></div>
   <div class="home text-center">
     <header v-pin:[direction]="pinPadding" style="width: 100%; text-align: center" class="max640">
       <p>
@@ -79,5 +80,10 @@ export default defineComponent({
 <style vars="{ color }">
 .text-color {
   color: var(--color);
+}
+.test-rem{
+  width: 100px;
+  height: 200px;
+  background-color: skyblue;
 }
 </style>

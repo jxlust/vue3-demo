@@ -1,7 +1,14 @@
 <template>
-<div class="test-rem"></div>
+  <div class="test-rem" >
+   <AbsRouter></AbsRouter>
+  </div>
+
   <div class="home text-center">
-    <header v-pin:[direction]="pinPadding" style="width: 100%; text-align: center" class="max640">
+    <header
+      v-pin:[direction]="pinPadding"
+      style="width: 100%; text-align: center"
+      class="max640"
+    >
       <p>
         Stick me
         <span class="text-color">{{ pinPadding }}</span>
@@ -22,7 +29,13 @@
     </div>
     <div class="mg-b20 flex flex-center">
       自定义指令：
-      <input type="range" min="0" max="500" v-model="pinPadding" style="z-index: 9" />
+      <input
+        type="range"
+        min="0"
+        max="500"
+        v-model="pinPadding"
+        style="z-index: 9"
+      />
     </div>
     <Button type="success" @click="showToast">更改字体颜色</Button>
   </div>
@@ -32,6 +45,7 @@
 import dayjs from "dayjs";
 import { defineComponent } from "vue";
 import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import AbsRouter from '@/components/AbstractRouter.vue';
 import { Button, Dialog, Toast } from "vant";
 
 export default defineComponent({
@@ -39,6 +53,7 @@ export default defineComponent({
   components: {
     HelloWorld,
     Button,
+    AbsRouter
   },
   data() {
     return {
@@ -49,6 +64,9 @@ export default defineComponent({
       color: "red",
       city: ["", "", ""],
     };
+  },
+  setup() {
+    console.log('setup.');
   },
   methods: {
     showToast() {
@@ -81,7 +99,7 @@ export default defineComponent({
 .text-color {
   color: var(--color);
 }
-.test-rem{
+.test-rem {
   width: 100px;
   height: 200px;
   background-color: skyblue;

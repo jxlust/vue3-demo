@@ -1,8 +1,13 @@
 <template>
   <div class="wrapper">
-    <transition name="van-fade">
+    <!-- <transition name="van-fade">
       <router-view />
-    </transition>
+    </transition> -->
+    <router-view v-slot="{ Component }">
+      <transition name="van-fade">
+        <component :is="Component" />
+      </transition>
+    </router-view>
     <Tabbar route placeholder v-show="showFooter">
       <TabbarItem replace to="/" icon="home-o">HomeTest</TabbarItem>
       <TabbarItem replace to="/about" icon="search">About</TabbarItem>
@@ -13,7 +18,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, computed } from "vue";
+import { useRoute, useRouter } from "vue-router";
 import { Tabbar, TabbarItem } from "vant";
 
 export default defineComponent({
@@ -22,10 +28,12 @@ export default defineComponent({
     Tabbar,
     TabbarItem,
   },
-  computed: {
-    showFooter() {
-      return this.$route.path.split("/").length < 3;
-    },
+  setup(props) {
+    const route = useRoute();
+    const showFooter = computed(() => route.path.split("/").length < 3);
+    return {
+      showFooter,
+    };
   },
 });
 </script>

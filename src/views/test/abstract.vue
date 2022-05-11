@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts">
-import myHooks from "@/composition/myHooks.ts";
+import myHooks from "@/composition/myHooks";
 import { onMounted, reactive, ref, nextTick } from "vue";
 export default {
   setup() {

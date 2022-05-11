@@ -51,7 +51,7 @@
           v-for="(item,key) in awardList"
           :key="item.id"
           class="awards-item"
-          :class="{'awards-item-draw':key===4,'run-item':item.runId===current}"
+          :class="{'awards-item-draw':key===4,'run-item':item.runId === current}"
         >
           <div v-if="key===4" @click="handleStart" class="draw-btn svelte-ecndpu">
             <span class="draw-btn-text">点击抽奖</span>

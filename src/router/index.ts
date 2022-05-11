@@ -78,6 +78,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/test',
     name: 'test',
     component: () => import(/* webpackChunkName: "test" */ "@/views/test/abstract.vue"),
+  },
+  {
+    path: '/test2',
+    name: 'test2',
+    component: () => import(/* webpackChunkName: "test" */ "@/views/setupTest/test.vue"),
   }
 ];
 // createWebHashHistory

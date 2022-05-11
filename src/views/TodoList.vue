@@ -89,19 +89,19 @@ export default defineComponent({
     const delTodoAction = (item: { id: number }, todo: boolean) => {
       if (todo) {
         undoneTodoList.splice(
-          undoneTodoList.findIndex((i) => i.id === item.id),
+          undoneTodoList.findIndex((i:any) => i.id === item.id),
           1
         );
       } else {
         completedTodoList.splice(
-          completedTodoList.findIndex((i) => i.id === item.id),
+          completedTodoList.findIndex((i:any) => i.id === item.id),
           1
         );
       }
     };
 
     const doneTodo = (item: { id: number; name: string }) => {
-      undoneTodoList.splice(undoneTodoList.findIndex((i) => i.id === item.id), 1);
+      undoneTodoList.splice(undoneTodoList.findIndex((i:any) => i.id === item.id), 1);
       completedTodoList.push(item);
     };
 

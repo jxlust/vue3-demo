@@ -5,15 +5,15 @@
     <div class="flex flex-column">
       <div class="flex flex-center mg-t10">
         <label>姓名：</label>
-        <input ref="nameinput" v-model.trim="formData.name" maxlength="16" />
+        <input ref="nameinput" v-model.trim="formData.name" :maxlength="16" />
       </div>
       <div class="flex flex-center mg-t10">
         <label>手机号：</label>
-        <input type="tel" v-model.trim="formData.phone" maxlength="11" />
+        <input type="tel" v-model.trim="formData.phone" :maxlength="11" />
       </div>
       <div class="flex flex-center mg-t10">
         <label>验证码：</label>
-        <input type="tel" v-model.trim="formData.code" maxlength="6" />
+        <input type="tel" v-model.trim="formData.code" :maxlength="6" />
       </div>
     </div>
     <p class="mg-t10">{{formData}}</p>

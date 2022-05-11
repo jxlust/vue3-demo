@@ -1,5 +1,16 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import {
+  createRouter,
+  createWebHashHistory,
+  createWebHistory,
+  RouteRecordRaw,
+} from "vue-router";
 
+const mdShow = () =>
+  import(/* webpackChunkName: "mdshow" */ "@/components/mdshow/index.vue");
+const lottieRunMan = () =>
+  import(
+    /* webpackChunkName: "lottieAni" */ "@/components/lottieAni/runMan.vue"
+  );
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -52,11 +63,27 @@ const routes: Array<RouteRecordRaw> = [
     path: "/chat/list",
     name: "Chat",
     component: () => import(/* webpackChunkName: "chatpage" */ "@/views/chat"),
+  },
+  {
+    path: "/mdShow",
+    name: "mdshow",
+    component: mdShow,
+  },
+  {
+    path: "/runMan",
+    name: "runMan",
+    component: lottieRunMan,
+  },
+  {
+    path: '/test',
+    name: 'test',
+    component: () => import(/* webpackChunkName: "test" */ "@/views/test/abstract.vue"),
   }
 ];
-
+// createWebHashHistory
+// createWebHistory 推荐使用
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 

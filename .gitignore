@@ -1,7 +1,8 @@
 .DS_Store
 node_modules
 /dist
-
+/doceH5
+/docs
 
 # local env files
 .env.local

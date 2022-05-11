@@ -56,7 +56,7 @@ export default defineComponent({
   setup() {
     const CurrentInstance = getCurrentInstance();
 
-    const addTodoName = ref(""); // input 绑定值
+    const addTodoName = ref<string>(""); // input 绑定值
 
     // 清单列表
     const undoneTodoList = reactive([

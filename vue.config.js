@@ -1,6 +1,6 @@
 module.exports = {
   publicPath: "./",
-  outputDir: "docs",
+  outputDir: "doceH5",
   productionSourceMap: false,
   chainWebpack: config => {
     config.plugins.delete('preload')

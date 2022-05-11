@@ -4,7 +4,7 @@
       <router-view />
     </transition>
     <Tabbar route placeholder v-show="showFooter">
-      <TabbarItem replace to="/" icon="home-o">Home</TabbarItem>
+      <TabbarItem replace to="/" icon="home-o">HomeTest</TabbarItem>
       <TabbarItem replace to="/about" icon="search">About</TabbarItem>
       <TabbarItem replace to="/todoList" icon="friends-o">ToDo</TabbarItem>
       <TabbarItem replace to="/luckdraw" icon="setting-o">LuckDraw</TabbarItem>

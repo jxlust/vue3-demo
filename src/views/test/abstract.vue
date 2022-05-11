@@ -1,6 +1,6 @@
 <template>
     <div>
-        我是url不变的abstract页面 --- {{a}}
+        我是url不变的abstract页面 --- {{a.aa.value}}
     </div>
 </template>
 
